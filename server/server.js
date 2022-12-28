@@ -32,7 +32,7 @@ const { initPassport } = require('../middlewares/passport')
 
 class Server {
     constructor() {
-        this.PORT = yargs.argv.port || 8080
+        this.PORT = process.env.PORT || 8080
         this.app = express()
         this.httpServer = new HttpServer(this.app)
         this.ioServer = new IOServer(this.httpServer)
